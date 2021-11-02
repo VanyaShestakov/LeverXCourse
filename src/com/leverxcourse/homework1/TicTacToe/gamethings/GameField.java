@@ -1,7 +1,8 @@
-package com.leverxcourse.homework1.TicTacToe.Game;
+package com.leverxcourse.homework1.TicTacToe.gamethings;
 
-import com.leverxcourse.homework1.TicTacToe.Exceptions.CellIsTakenException;
-import com.leverxcourse.homework1.TicTacToe.Exceptions.SymbolPositionOutOfBoundsException;
+import com.leverxcourse.homework1.TicTacToe.exceptions.CellIsTakenException;
+import com.leverxcourse.homework1.TicTacToe.exceptions.SymbolPositionOutOfBoundsException;
+import com.leverxcourse.homework1.TicTacToe.gamethings.Coord;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ public class GameField {
     private static final byte FIELD_SIZE = 3;
     private static final char EMPTY = '_';
 
-    private char[][] field;
+    private final char[][] field;
 
     public GameField() {
         this.field = new char[FIELD_SIZE][FIELD_SIZE];
@@ -73,6 +74,7 @@ public class GameField {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("FIELD:\n");
         for (int i = 0; i < FIELD_SIZE; i++) {
             for (int j = 0; j < FIELD_SIZE; j++) {
                 stringBuilder.append(field[i][j]).append(" ");

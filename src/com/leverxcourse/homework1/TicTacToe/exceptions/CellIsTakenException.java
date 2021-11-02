@@ -1,4 +1,4 @@
-package com.leverxcourse.homework1.TicTacToe.Exceptions;
+package com.leverxcourse.homework1.TicTacToe.exceptions;
 
 public class CellIsTakenException extends RuntimeException{
     public CellIsTakenException() {

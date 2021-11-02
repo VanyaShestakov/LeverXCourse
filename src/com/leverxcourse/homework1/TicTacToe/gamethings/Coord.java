@@ -1,4 +1,4 @@
-package com.leverxcourse.homework1.TicTacToe.Game;
+package com.leverxcourse.homework1.TicTacToe.gamethings;
 
 public class Coord {
     private int x;
