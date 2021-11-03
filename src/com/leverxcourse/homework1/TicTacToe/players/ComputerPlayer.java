@@ -12,7 +12,6 @@ public class ComputerPlayer implements Player{
 
     private final Side side;
     private final String name;
-    private final Scanner scanner = new Scanner(System.in);
 
     public ComputerPlayer(Side side, String name) {
         this.side = side;
@@ -38,5 +37,10 @@ public class ComputerPlayer implements Player{
     @Override
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public Side getSide() {
+        return this.side;
     }
 }

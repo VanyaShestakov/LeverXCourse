@@ -29,6 +29,11 @@ public class RealPlayer implements Player {
     }
 
     @Override
+    public Side getSide() {
+        return this.side;
+    }
+
+    @Override
     public void playRound(GameField field) {
         System.out.println("Now play " + this.name + " (" + side.getSymbol() + ")");
         boolean isIncorrect;
