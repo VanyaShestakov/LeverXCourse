@@ -1,6 +1,7 @@
 package com.leverxcourse.homework1.TicTacToe.game;
 
-import com.leverxcourse.homework1.TicTacToe.gamethings.GameField;
+import com.leverxcourse.homework1.TicTacToe.field.GameField;
+import com.leverxcourse.homework1.TicTacToe.field.impl.TicTacToeField;
 import com.leverxcourse.homework1.TicTacToe.players.Player;
 
 public class TicTacToeGame {
@@ -9,17 +10,17 @@ public class TicTacToeGame {
     private final Player firstPlayer;
     private final Player secondPlayer;
 
-    public TicTacToeGame(Player firstPlayer, Player secondPlayer) {
+    public TicTacToeGame(Player firstPlayer, Player secondPlayer, GameField field) {
         this.firstPlayer = firstPlayer;
         this.secondPlayer = secondPlayer;
-        this.field = new GameField();
+        this.field = field;
     }
 
     public void startGame() {
         while (true) {
             System.out.println(field);
             firstPlayer.playRound(field);
-            if (field.hasWinner(firstPlayer.getSideSymbol())) {
+            if (field.isWinner(firstPlayer)) {
                 System.out.println(firstPlayer.getName() + " won!");
                 System.out.println(field);
                 break;
@@ -31,7 +32,7 @@ public class TicTacToeGame {
             }
             System.out.println(field);
             secondPlayer.playRound(field);
-            if (field.hasWinner(secondPlayer.getSideSymbol())) {
+            if (field.isWinner(secondPlayer)) {
                 System.out.println(secondPlayer.getName() + " won!");
                 System.out.println(field);
                 break;

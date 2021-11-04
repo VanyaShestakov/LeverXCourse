@@ -1,20 +1,22 @@
-package com.leverxcourse.homework1.TicTacToe.gamethings;
+package com.leverxcourse.homework1.TicTacToe.field.impl;
 
 import com.leverxcourse.homework1.TicTacToe.exceptions.CellIsTakenException;
 import com.leverxcourse.homework1.TicTacToe.exceptions.SymbolPositionOutOfBoundsException;
+import com.leverxcourse.homework1.TicTacToe.field.GameField;
 import com.leverxcourse.homework1.TicTacToe.gamethings.Coord;
+import com.leverxcourse.homework1.TicTacToe.players.Player;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameField {
+public class TicTacToeField implements GameField {
 
     private static final byte FIELD_SIZE = 3;
     private static final char EMPTY = '_';
 
     private final char[][] field;
 
-    public GameField() {
+    public TicTacToeField() {
         this.field = new char[FIELD_SIZE][FIELD_SIZE];
         initField();
     }
@@ -47,7 +49,8 @@ public class GameField {
         return false;
     }
 
-    public boolean hasWinner(char symbol) {
+    public boolean isWinner(Player player) {
+        char symbol = player.getSideSymbol();
         for (int i = 0; i < FIELD_SIZE; i++) {
             if (field[i][0] == symbol && field[i][1] == symbol && field[i][2] == symbol) {
                 return true;
@@ -56,7 +59,7 @@ public class GameField {
                 return true;
             }
         }
-        if (field[0][0] == symbol && field[1][1] == symbol && field[2][2] == symbol) {
+        if (field[0][0] == symbol && field[1][1] == symbol && field[2][2] == symbol ) {
             return true;
         }
         if (field[0][2] == symbol && field[1][1] == symbol && field[2][0] == symbol) {
@@ -66,6 +69,7 @@ public class GameField {
     }
 
     public void addSymbol(int i, int j, char symbol) {
+        checkSymbol(symbol);
         checkRange(i, j);
         checkCell(i, j);
         field[i][j] = symbol;
@@ -95,6 +99,12 @@ public class GameField {
     private void checkCell(int i, int j) {
         if (field[i][j] != '_') {
             throw new CellIsTakenException("This cell is taken");
+        }
+    }
+
+    private void checkSymbol(char symbol) {
+        if (symbol != 'X' && symbol != '0') {
+            throw new IllegalArgumentException("Illegal argument 'symbol'=" + symbol);
         }
     }
 

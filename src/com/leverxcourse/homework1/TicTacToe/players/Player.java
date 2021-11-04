@@ -1,6 +1,7 @@
 package com.leverxcourse.homework1.TicTacToe.players;
 
-import com.leverxcourse.homework1.TicTacToe.gamethings.GameField;
+import com.leverxcourse.homework1.TicTacToe.field.GameField;
+import com.leverxcourse.homework1.TicTacToe.field.impl.TicTacToeField;
 import com.leverxcourse.homework1.TicTacToe.gamethings.Side;
 
 public interface Player {

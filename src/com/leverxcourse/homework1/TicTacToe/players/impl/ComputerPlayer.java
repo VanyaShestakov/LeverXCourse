@@ -1,14 +1,15 @@
-package com.leverxcourse.homework1.TicTacToe.players;
+package com.leverxcourse.homework1.TicTacToe.players.impl;
 
+import com.leverxcourse.homework1.TicTacToe.field.GameField;
 import com.leverxcourse.homework1.TicTacToe.gamethings.Coord;
-import com.leverxcourse.homework1.TicTacToe.gamethings.GameField;
+import com.leverxcourse.homework1.TicTacToe.field.impl.TicTacToeField;
 import com.leverxcourse.homework1.TicTacToe.gamethings.Side;
+import com.leverxcourse.homework1.TicTacToe.players.Player;
 
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
-public class ComputerPlayer implements Player{
+public class ComputerPlayer implements Player {
 
     private final Side side;
     private final String name;

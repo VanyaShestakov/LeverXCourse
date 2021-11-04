@@ -1,9 +1,11 @@
 package com.leverxcourse.homework1.TicTacToe;
 
+import com.leverxcourse.homework1.TicTacToe.field.GameField;
+import com.leverxcourse.homework1.TicTacToe.field.impl.TicTacToeField;
 import com.leverxcourse.homework1.TicTacToe.game.TicTacToeGame;
-import com.leverxcourse.homework1.TicTacToe.players.ComputerPlayer;
+import com.leverxcourse.homework1.TicTacToe.players.impl.ComputerPlayer;
 import com.leverxcourse.homework1.TicTacToe.players.Player;
-import com.leverxcourse.homework1.TicTacToe.players.RealPlayer;
+import com.leverxcourse.homework1.TicTacToe.players.impl.RealPlayer;
 import com.leverxcourse.homework1.TicTacToe.gamethings.Side;
 
 import java.util.Scanner;
@@ -34,8 +36,8 @@ public class GameRunner {
             Side computerSide = firstPlayer.getSide() == Side.ZERO ? Side.CROSS : Side.ZERO;
             secondPlayer = new ComputerPlayer(computerSide, "Computer");
         }
-
-        TicTacToeGame game = new TicTacToeGame(firstPlayer, secondPlayer);
+        GameField field = new TicTacToeField();
+        TicTacToeGame game = new TicTacToeGame(firstPlayer, secondPlayer, field);
         game.startGame();
     }
 
