@@ -13,9 +13,7 @@ public interface GameField {
 
     boolean hasEmptyCells();
 
-    boolean isWinner(Player player);
+    boolean hasWinner(Player player);
 
     void addSymbol(int i, int j, char symbol);
-
-
 }

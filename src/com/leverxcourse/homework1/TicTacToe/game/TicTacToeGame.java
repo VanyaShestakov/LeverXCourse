@@ -1,7 +1,6 @@
 package com.leverxcourse.homework1.TicTacToe.game;
 
 import com.leverxcourse.homework1.TicTacToe.field.GameField;
-import com.leverxcourse.homework1.TicTacToe.field.impl.TicTacToeField;
 import com.leverxcourse.homework1.TicTacToe.players.Player;
 
 public class TicTacToeGame {
@@ -34,7 +33,7 @@ public class TicTacToeGame {
 
     private boolean playRound(Player player) {
         player.playRound(field);
-        if (field.isWinner(player)) {
+        if (field.hasWinner(player)) {
             System.out.println(player.getName() + " won!");
             System.out.println(field);
             return true;

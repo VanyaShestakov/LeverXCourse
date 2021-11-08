@@ -97,10 +97,4 @@ public class GameRunner {
         } while (isIncorrect);
         return num;
     }
-
-
-
-
-
-
 }

@@ -19,7 +19,6 @@ public class ComputerPlayer implements Player {
         this.name = name;
     }
 
-
     @Override
     public void playRound(GameField field) {
         System.out.println("Now play " + this.name + " (" + side.getSymbol() + ")");

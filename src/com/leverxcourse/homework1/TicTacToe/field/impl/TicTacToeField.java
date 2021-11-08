@@ -5,9 +5,7 @@ import com.leverxcourse.homework1.TicTacToe.exceptions.SymbolPositionOutOfBounds
 import com.leverxcourse.homework1.TicTacToe.field.GameField;
 import com.leverxcourse.homework1.TicTacToe.gamethings.Coord;
 import com.leverxcourse.homework1.TicTacToe.players.Player;
-
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class TicTacToeField implements GameField {
@@ -50,7 +48,7 @@ public class TicTacToeField implements GameField {
         return false;
     }
 
-    public boolean isWinner(Player player) {
+    public boolean hasWinner(Player player) {
         char symbol = player.getSideSymbol();
         for (int i = 0; i < FIELD_SIZE; i++) {
             if (field[i][0] == symbol && field[i][1] == symbol && field[i][2] == symbol) {
