@@ -15,6 +15,7 @@ public class GameRunner {
     private final static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+        System.out.println(Integer.parseInt("11", 16));
         System.out.println("TIC TAC TOE GAME");
         int choice = chooseGameMode();
         Player firstPlayer;

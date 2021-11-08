@@ -17,31 +17,33 @@ public class TicTacToeGame {
     }
 
     public void startGame() {
+        boolean isEnd = false;
         while (true) {
             System.out.println(field);
-            firstPlayer.playRound(field);
-            if (field.isWinner(firstPlayer)) {
-                System.out.println(firstPlayer.getName() + " won!");
-                System.out.println(field);
-                break;
-            }
-            if (!field.hasEmptyCells()) {
-                System.out.println("Friendship won!");
-                System.out.println(field);
+            isEnd = playRound(firstPlayer);
+            if (isEnd) {
                 break;
             }
             System.out.println(field);
-            secondPlayer.playRound(field);
-            if (field.isWinner(secondPlayer)) {
-                System.out.println(secondPlayer.getName() + " won!");
-                System.out.println(field);
-                break;
-            }
-            if (!field.hasEmptyCells()) {
-                System.out.println("Friendship won!");
-                System.out.println(field);
+            isEnd = playRound(secondPlayer);
+            if (isEnd) {
                 break;
             }
         }
+    }
+
+    private boolean playRound(Player player) {
+        player.playRound(field);
+        if (field.isWinner(player)) {
+            System.out.println(player.getName() + " won!");
+            System.out.println(field);
+            return true;
+        }
+        if (!field.hasEmptyCells()) {
+            System.out.println("Friendship won!");
+            System.out.println(field);
+            return true;
+        }
+        return false;
     }
 }

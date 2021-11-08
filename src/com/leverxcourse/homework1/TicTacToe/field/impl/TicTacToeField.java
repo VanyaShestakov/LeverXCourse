@@ -7,6 +7,7 @@ import com.leverxcourse.homework1.TicTacToe.gamethings.Coord;
 import com.leverxcourse.homework1.TicTacToe.players.Player;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class TicTacToeField implements GameField {
@@ -113,5 +114,4 @@ public class TicTacToeField implements GameField {
             throw new SymbolPositionOutOfBoundsException("The coordinate (" + x + ";" + y + ") is out of bounds of the game field");
         }
     }
-
 }
